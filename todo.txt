@@ -1,0 +1,25 @@
+TASK							STATUS				PROGRESS
+
+POSTER							TODO				/10
+	
+
+
+
+PAPER					
+1. intro						TODO				/10
+2. methods						TODO				/10
+3. results + discussion					TODO				/10
+4. references						TODO				/10
+
+
+
+CODING
+1. install cblaster and clinker in git repo		TODO
+2. 
+
+
+
+
+
+
+
