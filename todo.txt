@@ -14,9 +14,9 @@ PAPER
 
 
 CODING
-1. install cblaster and clinker in git repo		TODO
-2. 
-
+1. clone cblaster and clinker in git repo		DONE				
+2. understand cblaster code and output generation	TODO				4/10
+3.
 
 
 
