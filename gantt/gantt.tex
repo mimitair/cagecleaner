@@ -2,18 +2,19 @@
 
 \usepackage{pgfgantt}
 \usepackage{float}
-\usepackage[a4paper, total={8in, 8in}]{geometry}
+\usepackage[a4paper, total={8in, 11in}]{geometry}
+\usepackage{pdflscape}
 
 \begin{document}
-
 \begin{flushleft}
+
 \begin{ganttchart}[bar height=.4, 
 	expand chart= \textwidth,
 	hgrid=true,
 	vgrid=true,
 	vgrid={*6{green}, *1{red}}]
 	{1}{70}
-	\gantttitle{IBP Schedule }{70} \\
+	\gantttitle{IBP Schedule }{70} \\ 
 	\gantttitle{Week 4}{7} 
 	\gantttitle{Week 5}{7} 
 	\gantttitle{Week 6}{7} 
@@ -48,23 +49,9 @@
 	
 	\ganttgroup[group/.append style={draw=black, fill=blue!50}]{POSTER}{29}{53} \\
 	\ganttmilestone{deadline 8/12}{56}
-	
 \end{ganttchart}
+\end{flushleft}	
 
-\end{flushleft}
-			
-		
-		\newpage
-		
-		\begin{ganttchart}[
-			hgrid,
-			vgrid,
-			x unit=4mm,
-			time slot format=isodate
-			]{2012-12-25}{2013-02-01}
-			\gantttitlecalendar{year, month, day, week=3, weekday} \\
-			\ganttbar{}{2013-01-14}{2013-01-17}
-		\end{ganttchart}
 
 
 \end{document}
