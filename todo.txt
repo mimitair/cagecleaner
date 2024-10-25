@@ -15,8 +15,10 @@ PAPER
 
 CODING
 1. clone cblaster and clinker in git repo		DONE				
-2. understand cblaster code and output generation	TODO				4/10
-3.
+2. understand cblaster code and output generation	TODO				8/10
+3. Get assembly accession numbers from scaffold IDs	DONE
+4. Download all genomes from assembly accession		TODO				0/10
+5. Cluster genomes with drep/rabbitclust/...		TODO				0/10
 
 
 
