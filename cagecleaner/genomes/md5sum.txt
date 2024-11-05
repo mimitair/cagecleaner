@@ -1,0 +1,5 @@
+e1c0a8b9b13ef0bac6ffc64aff0dc4e2  ncbi_dataset/data/assembly_data_report.jsonl
+f3609ad7e92c9ea89a9754d3f386bbdb  ncbi_dataset/data/GCA_002938375.1/GCA_002938375.1_Psicy2_genomic.fna
+30adb7c808e48d608750565222a521ae  ncbi_dataset/data/GCA_002938385.1/GCA_002938385.1_ASM293838v1_genomic.fna
+69ecef597c94147c20622a39c8b63eb4  ncbi_dataset/data/GCF_017499595.1/GCF_017499595.1_MGC_Penvy_1_genomic.fna
+4aadad6ce77aa48d183a42d260c00562  ncbi_dataset/data/dataset_catalog.json
