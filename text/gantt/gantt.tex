@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage{pgfgantt}
+\usepackage{float}
+\usepackage[a4paper, total={8in, 11in}]{geometry}
+\usepackage{pdflscape}
+
+\begin{document}
+\begin{flushleft}
+
+\begin{ganttchart}[bar height=.4, 
+	expand chart= \textwidth,
+	hgrid=true,
+	vgrid=true,
+	vgrid={*6{green}, *1{red}},
+	today=15]
+	{1}{70}
+	\gantttitle{IBP Schedule }{70} \\ 
+	\gantttitle{Week 4}{7} 
+	\gantttitle{Week 5}{7} 
+	\gantttitle{Week 6}{7} 
+	\gantttitle{Week 7}{7} 
+	\gantttitle{Week 8}{7} 
+	\gantttitle{Week 9}{7}
+	\gantttitle{Week 10}{7} 
+	\gantttitle{Week 11}{7} 
+	\gantttitle{Week 12}{7} 
+	\gantttitle{Week 13}{7} \\  
+	
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1}
+	\gantttitlelist{1,...,7}{1} \\
+	\ganttgroup[group/.append style={draw=black, fill=green!50}]{CODING}{2}{35} \\
+	\ganttbar[progress=100, bar/.append style={fill=green!50}]{Define strategy}{2}{8} \\
+	\ganttbar{Implement}{9}{35} \\
+	\ganttbar[progress=100, bar/.append style={fill=green!50}]{Get genome assemblies}{9}{13}\\
+	\ganttbar{Cluster genomes}{14}{22}\\
+	\ganttbar{Extract cleaned BGCs}{23}{30}\\
+	\ganttlink{elem3}{elem4}
+	\ganttlink{elem4}{elem5}	
+	
+	\ganttgroup[group/.append style={draw=black, fill=red!50}]{PAPER}{8}{63} \\
+	\ganttmilestone{deadline 18/12}{65} \\
+	\ganttbar[progress=10]{Introduction}{9}{21} \\
+	\ganttbar{Methods}{22}{35} \\
+	\ganttbar{Results/Discussion}{36}{56} \\
+	\ganttbar{Finalize}{57}{63} \\
+
+	
+	\ganttgroup[group/.append style={draw=black, fill=blue!50}]{POSTER}{29}{53} \\
+	\ganttmilestone{deadline 8/12}{56}
+\end{ganttchart}
+\end{flushleft}	
+
+
+
+\end{document}

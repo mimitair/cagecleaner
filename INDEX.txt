@@ -1,0 +1,26 @@
+/programs  # Code that we used and ran.
+  |
+   -- /cagecleaner  # Folder containing our program.
+        |
+         -- main.py  # Python script that takes cblaster output as input and runs the whole workflow.
+	|
+	 -- helper.sh  # Helper bash script that downloads the genomes and runs skDER for clustering.
+  |
+   -- /cblaster  # Cloned git repo
+  |
+   -- /clinker  # Cloned git repo
+
+
+/data  # 
+  |
+   -- example_runs  # Example cblaster runs obtained from our supervisor.
+  |
+   -- genomes  # Folder where the downloaded genomes are stored.
+  |
+   -- skder_out  # Folder where skDER output (dereplicated genomes) are stored
+  |
+   -- output  # Stores the "cleaned" output of our program
+
+/text  # Stores auxilliary files
+
+/test_env  # Unstructered folder for testing tools
