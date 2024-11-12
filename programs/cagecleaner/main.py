@@ -29,12 +29,13 @@ def get_scaffolds(path_to_binary: str) -> list:
 	return scaffolds
 	
 
-def get_assemblies(scaffolds: list) -> list:
+def get_assemblies(scaffolds: list) -> bool:
 	"""
 	This function obtains the genome assembly ID for each scaffold ID in the cblaster binary output file.
+	The assembly IDs are then written to a file 'assemblies.txt' as a long string to be passed as an argument to a helper bash script
 
 	:param list scaffolds: A list containing scaffold IDs.
-	:rtype list: A list containing all associated genome assembly IDs.
+	:rtype bool: Returns true if the length of the assembly list equals the length of the scaffold list (i.e. if we obtained a assembly ID for each scaffold ID)
 	"""
 	print("Contacting the NCBI servers and retreiving genome assembly IDs for each hit. This may take a while...")
 	
@@ -56,22 +57,36 @@ def get_assemblies(scaffolds: list) -> list:
 		
 		# Append the output of the above command to the result list:
 		result.append(process.stdout.strip())
+	
+	print(f"Extracted {len(result)} assembly IDs ")	
 
 	# Afterwards, we write the genome accession assemblies to a file as a long string:
 	with open('assemblies.txt', 'w') as file:
 		file.write(' '.join(str(assembly) for assembly in result))
-	
-	# Run the bash script to download genomes:
-	subprocess.run("./download_genomes.sh", shell=True, check=True)
-	
-	return result
+		
+	return len(result) == len(scaffolds)
 
+def cluster_genomes() -> None:
+	"""
+	This function calls a helper bash script that downloads and clusters the genomes
+	"""
+	
+	#print("Downloading and dereplicating the genomes. This may take even longer")
+
+	# Run the bash script to download and cluster genomes:
+	subprocess.run("./helper.sh", shell=True, check=True)
+	
+	
 def main():
 	# Path to the cblatser binary output file, given as command line argument	
 	path_to_binary = sys.argv[1]
 
 		
-	get_assemblies(get_scaffolds(path_to_binary))	
+	if get_assemblies(get_scaffolds(path_to_binary)):
+		cluster_genomes()
+	else:
+		print("Could not get all assembly IDs. Fix this")		
+
 
 if __name__ == "__main__":
 	main()

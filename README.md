@@ -26,12 +26,12 @@ relevant BGCs.
 
 # TODO
 - [x] Get genome assemblies for each hit in the cblaster binary output
-	- [] Ensure all assemblies exist and are obtained
+	- [ ] Ensure all assemblies exist and are obtained
 - [x] Download genome assemblies using NCBI datasets
-	- [] Test with large files (hpc)
-- [] Dereplicate genomes
+	- [ ] Test with large files (hpc)
+- [ ] Dereplicate genomes
 	- [x] skDER
-	- [] Pangenome approach?
-- [] Extract BGCs from representative genomes
-- [] Create Docker engine for the whole workflow? (optional)
-- [] Integrate it all into one tool (optional)
+	- [ ] Pangenome approach?
+- [ ] Extract BGCs from representative genomes
+- [ ] Create Docker engine for the whole workflow? (optional)
+- [ ] Integrate it all into one tool (optional)

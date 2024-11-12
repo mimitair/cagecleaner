@@ -1,0 +1,15 @@
+2024-11-12 11:02 - INFO - 
+NEW RUN!!!
+**************************************
+2024-11-12 11:02 - INFO - Running version 1.2.8
+2024-11-12 11:02 - INFO - Appending command issued for future records to: /home/mimitair/projects/ibp/data/skder_out/Command_Issued.txt
+2024-11-12 11:02 - INFO - Running skani triangle -l /home/mimitair/projects/ibp/data/skder_out/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 1 -o /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt
+2024-11-12 11:02 - INFO - Successfully ran: skani triangle -l /home/mimitair/projects/ibp/data/skder_out/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 1 -o /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt
+2024-11-12 11:02 - INFO - Running skDERsum /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt /home/mimitair/projects/ibp/data/skder_out/Concatenated_N50.txt 99.0 90.0 > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt
+2024-11-12 11:02 - INFO - Successfully ran: skDERsum /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt /home/mimitair/projects/ibp/data/skder_out/Concatenated_N50.txt 99.0 90.0 > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt
+2024-11-12 11:02 - INFO - Running sort -k 2 --parallel=1 -gr /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.sorted.txt
+2024-11-12 11:02 - INFO - Successfully ran: sort -k 2 --parallel=1 -gr /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.sorted.txt
+2024-11-12 11:02 - INFO - ******************
+skDER finished!
+******************
+Directory with representative genomes can be found at: /home/mimitair/projects/ibp/data/skder_out/Dereplicated_Representative_Genomes/
