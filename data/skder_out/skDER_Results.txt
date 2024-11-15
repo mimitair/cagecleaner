@@ -1,0 +1,4 @@
+/home/mimitair/projects/ibp/data/genomes/all/GCF_002104555.1_ASM210455v1_genomic.fna
+/home/mimitair/projects/ibp/data/genomes/all/GCF_000972575.1_ASM97257v1_genomic.fna
+/home/mimitair/projects/ibp/data/genomes/all/GCF_003039935.1_ASM303993v1_genomic.fna
+/home/mimitair/projects/ibp/data/genomes/all/GCF_000751255.1_Sa_FSA084_genomic.fna

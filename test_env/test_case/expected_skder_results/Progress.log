@@ -1,0 +1,15 @@
+2024-09-05 19:39 - INFO - 
+NEW RUN!!!
+**************************************
+2024-09-05 19:39 - INFO - Running version 1.2.7
+2024-09-05 19:39 - INFO - Appending command issued for future records to: /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Command_Issued.txt
+2024-09-05 19:39 - INFO - Running skani triangle -l /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 4 -o /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Skani_Triangle_Edge_Output.txt
+2024-09-05 19:39 - INFO - Successfully ran: skani triangle -l /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 4 -o /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Skani_Triangle_Edge_Output.txt
+2024-09-05 19:39 - INFO - Running skDERsum /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Skani_Triangle_Edge_Output.txt /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Concatenated_N50.txt 99.0 90.0 > /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Genome_Information_for_Greedy_Clustering.txt
+2024-09-05 19:39 - INFO - Successfully ran: skDERsum /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Skani_Triangle_Edge_Output.txt /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Concatenated_N50.txt 99.0 90.0 > /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Genome_Information_for_Greedy_Clustering.txt
+2024-09-05 19:39 - INFO - Running sort -k 2 --parallel=4 -gr /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Genome_Information_for_Greedy_Clustering.txt > /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Genome_Information_for_Greedy_Clustering.sorted.txt
+2024-09-05 19:39 - INFO - Successfully ran: sort -k 2 --parallel=4 -gr /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Genome_Information_for_Greedy_Clustering.txt > /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Genome_Information_for_Greedy_Clustering.sorted.txt
+2024-09-05 19:39 - INFO - ******************
+skDER finished!
+******************
+Directory with representative genomes can be found at: /workspace/local/rauf/skder_and_cidder/develop_v1.2.7/skDER/test_case/skder_results/Dereplicated_Representative_Genomes/
