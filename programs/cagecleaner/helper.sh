@@ -5,6 +5,9 @@ echo Downloading $(cat assemblies.txt | wc -w) genomes...
 # Download the dehydrated genome package:
 datasets download genome accession $(cat assemblies.txt) --dehydrated
 
+# Delete the assemblies file:
+rm assemblies.txt
+
 # Unzip the file in a folder called "genomes". This folder is located two steps up in the data folder
 unzip -d ../../data/genomes ncbi_dataset.zip
 

@@ -116,9 +116,9 @@ def main():
 			scaffold = list(scaff_ass_pairs.keys())[list(scaff_ass_pairs.values()).index(assembly.strip())]
 			
 			# Now we have to match this scaffold ID with the corresponding hit in the original cblaster binary file.
-			subprocess.run(f"grep '{scaffold}' {path_to_binary} >> cleaned_binary.csv", shell=True, check=True)
+			subprocess.run(f"grep '{scaffold}' {path_to_binary} > ../../data/output/cleaned_binary.csv", shell=True, check=True)
 
-	print("All done! Results are written to 'cleaned_binary.csv'. Thank you for using cagecleaner :)")
+	print("All done! Results are written to '/data/output/cleaned_binary.csv'. Thank you for using cagecleaner :)")
 
 if __name__ == "__main__":
 	main()
