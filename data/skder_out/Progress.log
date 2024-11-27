@@ -1,15 +1,15 @@
-2024-11-24 12:26 - INFO - 
+2024-11-27 14:17 - INFO - 
 NEW RUN!!!
 **************************************
-2024-11-24 12:26 - INFO - Running version 1.2.8
-2024-11-24 12:26 - INFO - Appending command issued for future records to: /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Command_Issued.txt
-2024-11-24 12:26 - INFO - Running skani triangle -l /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 1 -o /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Skani_Triangle_Edge_Output.txt
-2024-11-24 12:27 - INFO - Successfully ran: skani triangle -l /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 1 -o /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Skani_Triangle_Edge_Output.txt
-2024-11-24 12:27 - INFO - Running skDERsum /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Skani_Triangle_Edge_Output.txt /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Concatenated_N50.txt 99.0 90.0 > /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Genome_Information_for_Greedy_Clustering.txt
-2024-11-24 12:27 - INFO - Successfully ran: skDERsum /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Skani_Triangle_Edge_Output.txt /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Concatenated_N50.txt 99.0 90.0 > /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Genome_Information_for_Greedy_Clustering.txt
-2024-11-24 12:27 - INFO - Running sort -k 2 --parallel=1 -gr /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Genome_Information_for_Greedy_Clustering.txt > /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Genome_Information_for_Greedy_Clustering.sorted.txt
-2024-11-24 12:27 - INFO - Successfully ran: sort -k 2 --parallel=1 -gr /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Genome_Information_for_Greedy_Clustering.txt > /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Genome_Information_for_Greedy_Clustering.sorted.txt
-2024-11-24 12:27 - INFO - ******************
+2024-11-27 14:17 - INFO - Running version 1.2.8
+2024-11-27 14:17 - INFO - Appending command issued for future records to: /home/mimitair/projects/ibp/data/skder_out/Command_Issued.txt
+2024-11-27 14:17 - INFO - Running skani triangle -l /home/mimitair/projects/ibp/data/skder_out/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 1 -o /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt
+2024-11-27 14:17 - INFO - Successfully ran: skani triangle -l /home/mimitair/projects/ibp/data/skder_out/All_Genomes_Listing.txt --min-af 90.0 -E -s 90.0 -t 1 -o /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt
+2024-11-27 14:17 - INFO - Running skDERsum /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt /home/mimitair/projects/ibp/data/skder_out/Concatenated_N50.txt 99.0 90.0 > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt
+2024-11-27 14:17 - INFO - Successfully ran: skDERsum /home/mimitair/projects/ibp/data/skder_out/Skani_Triangle_Edge_Output.txt /home/mimitair/projects/ibp/data/skder_out/Concatenated_N50.txt 99.0 90.0 > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt
+2024-11-27 14:17 - INFO - Running sort -k 2 --parallel=1 -gr /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.sorted.txt
+2024-11-27 14:17 - INFO - Successfully ran: sort -k 2 --parallel=1 -gr /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.txt > /home/mimitair/projects/ibp/data/skder_out/Genome_Information_for_Greedy_Clustering.sorted.txt
+2024-11-27 14:17 - INFO - ******************
 skDER finished!
 ******************
-Directory with representative genomes can be found at: /vsc-hard-mounts/leuven-data/350/vsc35068/IBP/data/skder_out/Dereplicated_Representative_Genomes/
+Directory with representative genomes can be found at: /home/mimitair/projects/ibp/data/skder_out/Dereplicated_Representative_Genomes/
