@@ -17,16 +17,25 @@ if [ -d "../../data/genomes/all" ]; then
     rm -r ../../data/genomes/all
 fi 
 
-# Set some useful variables
+if [ -d "../../data/skder_out" ]; then
+    rm -r ../../data/skder_out
+fi
+
+# Set some useful variables:
 assembly_count=$(cat assemblies.txt | wc -w)
 batch_count=$(cat assemblies.txt | wc -l)
 
-echo Got $assembly_count genomes. Downloading in $batch_count batches...
+# The first argument is the ani-cutoff for skDER:
+pi_cutoff=$1
+
+echo Got $assembly_count assembly IDs. Downloading in $batch_count batches...
  
 # Create the directory to store all genomes
 mkdir ../../data/genomes/all
 
 while read line; do
+    # Removing files that are autmoatically donwnloaded by NCBI datasets. 
+    # This way datasets does not stop and ask the user to override the files.
     if [ -d "../../data/genomes/ncbi_dataset" ]; then
         rm -r ../../data/genomes/ncbi_dataset
     fi
@@ -53,14 +62,14 @@ while read line; do
 done < assemblies.txt
 
 echo Downloading finished!
+echo $(ls ../../data/genomes/all | wc -w) genomes in /data/genomes/all.
+echo Directory size: $(du --human-readable -s ../../data/genomes/all).
 
-echo $(ls ../../data/genomes/all | wc -w) genomes were downloaded.
-
-echo Dereplicating genomes...
+echo Dereplicating genomes with percent identity cutoff of $pi_cutoff.
 
 # Run skDER on the downloaded genomes:
 #TODO play with threads and ani cutoffs
-skder -g ../../data/genomes/all/* -o ../../data/skder_out
+skder -g ../../data/genomes/all/* -o ../../data/skder_out -i $pi_cutoff
 
 echo Dereplication done! $(ls ../../data/genomes/all | wc -w) genomes were converted into $(ls ../../data/skder_out/Dereplicated_Representative_Genomes | wc -w) genomes. 
 
