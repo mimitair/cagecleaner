@@ -1,5 +1,3 @@
-
-
 """
 This script takes a binary and summary output file from the cblaster tool.
 Secondly, each scaffold ID in the binary output is coupled to an assembly ID through edirect utilities.
@@ -61,6 +59,50 @@ def validate_input_files(path_to_binary: str, path_to_summary:str) -> bool:
         
         return True
 
+def get_stats(path_to_summary: str) -> None:
+    """
+    This function reads the cblaster summary file and provides some descriptive statistics.
+    More specifically: What species are present, and for each species; how many strains are there?
+
+    :param str path_to_summary: path to the cblaster summary file
+    """ 
+    # Initiate empty dictionary to store 'species:amount of strains' pairs 
+    result = {}
+    
+    # This is the regex pattern to be acptured in the summary file. Breakdown:
+    # (GENUS: any string starting with capital letter and only containing lowercase alphabet characters afterwards)
+    # (SPECIES: any string with only lowercase alphabetical characters)
+    # (STRAIN: anything that comes afterwards and ends with a new line)
+    # (====: The sequence of equal characters that's on the line beneath)
+    pattern = "([A-Z][a-z]+ )([a-z.]+)(.*\n)(=+)"
+    
+    # Open the file and find all matches. Matches are returned in a list of tuples.
+    with open(path_to_summary, 'r') as file:
+        matches = re.findall(pattern, file.read())
+    
+    # Each match is now in a tuple of strings where the first string correpsonds to the first capture group in the pattern, 
+    # second string to second capture group etc.
+    # We loop over the matches and extract the relevant info
+    for hit in matches:
+        organism_name = hit[0] + hit[1]  # genus + species
+        strain = hit[2]
+        if organism_name not in list(result.keys()):  # if 'genus species' is not in the dict yet, add it as a key
+            result[organism_name] = []  # The value will be a list of strains
+            result[organism_name].append(strain)  # Add the first strain
+                
+        else:  # If the species is already in the dictionary, check if the strain is already in the values. If not, append it to the value (which is a list).
+            if strain not in list(result[organism_name]):
+                result[organism_name].append(strain)
+            else:
+                continue
+    
+    # Print out the results:
+    print("\nDescriptive statistics of the cblaster summary file:")
+    print(f"Amount of species: {len(list(result.keys()))}")
+    for species in result:
+        print(f"{species}: {len(result[species])} strains")
+    
+
 
 def get_scaffolds(path_to_binary: str) -> list:
         """
@@ -70,7 +112,7 @@ def get_scaffolds(path_to_binary: str) -> list:
         :rtype list: A list containing the scaffold IDs.
         """
         
-        print("--- STEP 2: Extracting scaffold IDs from the binary input file. ---")
+        print("\n--- STEP 2: Extracting scaffold IDs from the binary input file. ---")
 
         # Read the file as comma separated, extract the first column (containing the scaffold IDs) as a polars series and convert to a python list
         scaffolds = pl.read_csv(path_to_binary, truncate_ragged_lines=True).to_series(1).to_list()
@@ -91,7 +133,7 @@ def get_assemblies(scaffolds: list) -> dict:
         # Set begin time:
         begin = time.time()
     
-        print("--- STEP 3: Contacting the NCBI servers and retreiving genome assembly IDs for each scaffold. This may take a while. ---")
+        print("\n--- STEP 3: Contacting the NCBI servers and retreiving genome assembly IDs for each scaffold. This may take a while. ---")
                 
         # Create empty dictionary to store genome assembly IDs with scaffold IDs as keys:
         result = {}
@@ -151,7 +193,7 @@ def dereplicate_genomes(assemblies: list, pi_cutoff:float=99.0) -> None:
         # Set begin time:
         begin = time.time()
 
-        print("--- STEP 4: Downloading and dereplicating genomes. ---")
+        print("\n--- STEP 4: Downloading and dereplicating genomes. ---")
 
         # First we write the assembly IDs to a file that can be used by the helper bash script: 
         with open('assemblies.txt', 'a') as file:
@@ -181,7 +223,7 @@ def get_dereplicated_scaffolds(path_to_dereplicated_assemblies: str, scaff_ass_p
         :rtype list: A list containing the dereplicated scaffolds
         """  
         
-        print("--- STEP 5: Extracting cleaned scaffold IDs ---")
+        print("\n--- STEP 5: Extracting cleaned scaffold IDs ---")
         # Initiate empty list to store the result:
         dereplicated_scaffolds = []
         
@@ -218,7 +260,7 @@ def write_output(dereplicated_scaffolds:list, path_to_summary:str, path_to_binar
         :param str path_to_binary: Path to binary file.
         """
        
-        print("--- STEP 6: Generating output files. ---")
+        print("\n--- STEP 6: Generating output files. ---")
         
         # Create intermediary list to store the cleaned hits:
         cleaned_hits = []
@@ -273,6 +315,8 @@ def main():
         pi_cutoff = float(sys.argv[3])  # percent identity cutoff for skDER, must be float
          
         if validate_input_files(path_to_binary, path_to_summary):
+            # Spit out some descriptive statistics of the summary file:
+            get_stats(path_to_summary)
             # First we capture the dictionary with scaffold:assembly pairs:
             scaff_ass_pairs = get_assemblies(get_scaffolds(path_to_binary))
 
@@ -280,7 +324,7 @@ def main():
             # This generates a file called "dereplicated_assemblies.txt"
             dereplicate_genomes(list(scaff_ass_pairs.values()), pi_cutoff)
             
-            # Check if the file 'dereplicated_assemblies.txt' exists:
+            # Check if the intermediary file 'dereplicated_assemblies.txt' exists:
             if not os.path.isfile("dereplicated_assemblies.txt"):
                 raise FileNotFoundError("Could not find the intermediary output file 'dereplicated_assemblies.txt'.")
 
