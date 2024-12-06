@@ -1,1 +1,0 @@
-genome	nearest_representative_genome	average_nucleotide_identity	alignment_fraction	match_category

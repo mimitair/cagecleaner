@@ -1,2 +1,0 @@
-Ref_file	Query_file	ANI	Align_fraction_ref	Align_fraction_query	Ref_name	Query_name
-/home/mimitair/projects/ibp/data/genomes/all/GCF_000025085.1_ASM2508v1_genomic.fna	/home/mimitair/projects/ibp/data/genomes/all/GCF_000270465.1_ASM27046v1_genomic.fna	99.92	95.79	98.10	NC_013893.1 Staphylococcus lugdunensis HKU09-01, complete sequence	NC_017353.1 Staphylococcus lugdunensis N920143, complete sequence

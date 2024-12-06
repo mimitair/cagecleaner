@@ -1,1 +1,0 @@
-/home/mimitair/miniforge3/envs/ibp/bin/skder -g ../cagecleaner/mydata/ncbi_dataset/data/GCA_002938375.1 ../cagecleaner/mydata/ncbi_dataset/data/GCA_002938385.1 ../cagecleaner/mydata/ncbi_dataset/data/GCF_017499595.1 -o skder_out

@@ -13,9 +13,9 @@
 module load cluster/genius
 module load Miniconda3/4.12.0
 
-# Load the conda environment:
+# Load the conda environment: (assuming the conda environment exists in the user's configuration)
 source /user/leuven/350/vsc35068/.bashrc
-conda activate /data/leuven/350/vsc35068/miniconda3/envs/ibp
+conda activate /data/leuven/350/vsc35068/miniconda3/envs/cagecleaner
 
 # Run the program:
-python3 main.py test_files/STS_test_small.csv
+python3 main.py ../../data/example_runs/cagecat/STS-cagecat/results/N398V589S066P61_binary.csv ../../data/example_runs/cagecat/STS-cagecat/results/N398V589S066P61_summary.txt 99

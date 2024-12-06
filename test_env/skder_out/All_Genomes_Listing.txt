@@ -1,3 +1,0 @@
-/home/mimitair/projects/ibp/cagecleaner/mydata/ncbi_dataset/data/GCA_002938375.1/GCA_002938375.1_Psicy2_genomic.fna
-/home/mimitair/projects/ibp/cagecleaner/mydata/ncbi_dataset/data/GCA_002938385.1/GCA_002938385.1_ASM293838v1_genomic.fna
-/home/mimitair/projects/ibp/cagecleaner/mydata/ncbi_dataset/data/GCF_017499595.1/GCF_017499595.1_MGC_Penvy_1_genomic.fna
