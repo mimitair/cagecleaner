@@ -357,12 +357,16 @@ def main():
         """
         This function executes all the previous functions in a logical manner.
         """
+        # Set begin time:
+        begin = time.time()
+
         # Assert correct amount of arguments are given:
         assert len(sys.argv) == 4, "Incorrect amount of arguments.\nUsage: python3 main.py <path_to_binary> <path_to_summary> <percent_identity_cutoff>"        
+        
         # Read the arguments given at the command line:       
         path_to_binary = sys.argv[1]  # path to binary file
         path_to_summary = sys.argv[2]  # path to summary file
-        pi_cutoff = float(sys.argv[3])  # percent identity cutoff for skDER, must be float
+        pi_cutoff = float(sys.argv[3])  # percent identity cutoff for skDER, must be converted to float
          
         # Validate the input files. If it returns True, we execute the program.
         if validate_input_files(path_to_binary, path_to_summary):
@@ -376,15 +380,21 @@ def main():
 
             # Then we download and cluster the genomes through the helper script:
             # This generates a file called "dereplicated_assemblies.txt"
+            # This function expects a list of assembly IDs to download, which can be found in the above dictionary as values
             dereplicate_genomes(list(scaff_ass_pairs.values()), pi_cutoff)
             
             # Final step: Couple dereplicated assembly IDs back to their respective hits in the binary and summary file:
             write_output(get_dereplicated_scaffolds('../../data/output/dereplicated_assemblies.txt', scaff_ass_pairs), path_to_summary, path_to_binary)
-        
+                
         # If the validation fails, we exit the program:
         else:
             print("Validation failed. Exiting the program.")
             sys.exit()
+
+        # Set end time:
+        end = time.time()
+        
+        print(f"Total runtime: {round(end - begin, 2)} s")
 
 if __name__ == "__main__":
         main()
