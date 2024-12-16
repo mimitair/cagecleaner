@@ -39,7 +39,7 @@ The output of this cagecleaner run can be found in '/data/example\_runs/cageclea
 
 To use cagecleaner, do the following:
 
-1. Clone our repository and cd into it: `cd IBP/`
+1. Clone our repository and cd into it: `cd cagecleaner/`
 2. Load the conda environment: `conda env create -n cagecleaner -f CONDA_ENV.yaml`
 3. Activate the conda environment: `conda activate cagecleaner`
 4. Go to the folder where the source code resides: `cd programs/cagecleaner/`

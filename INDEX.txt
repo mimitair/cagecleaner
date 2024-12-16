@@ -1,4 +1,4 @@
-IBP/
+cagecleaner/
 |
  -- README.md
 |
@@ -8,7 +8,7 @@ IBP/
 |
  -- programs/  # Contains the cagecleaner source code.
      |
-      -- /cagecleaner
+      -- /src
           |
            -- main.py  # Python script that runs the whole workflow.
 	      |
